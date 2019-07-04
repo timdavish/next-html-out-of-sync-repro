@@ -37,6 +37,8 @@ export default () => {
       <p>Clicking this button will redirect to /redirect, which redirects back to this page after mount, showing the expected layout on a client-side render.</p>
       <button onClick={goForARide}>Go for a ride..</button>
 
+      <p>You can also manually navigate to `localhost:3000/redirect` in your browser.</p>
+
       <style jsx>{`
       .test {
         width: 100px;
