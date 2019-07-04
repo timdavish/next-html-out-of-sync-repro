@@ -7,13 +7,31 @@ const Something = ({area, color}) => {
 
   return (
   <Fragment>
-    <div className='something'/>
+    <div className='something'>
+      <span className={`text-${area}`}>{area}</span>
+    </div>
+
     <style jsx>{`
         .something {
           grid-area: ${area};
           width: 20px;
           height: 20px;
           background-color: ${color};
+          display: grid;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .text-1 {
+          color: white;
+        }
+
+        .text-2 {
+          color: black;
+        }
+
+        .text-3 {
+          color: orange;
         }
       `}</style>
   </Fragment>
