@@ -1,13 +1,14 @@
-import React, {Fragment} from 'react'
-import Page from '../components/page'
-import redirect from './helpers/redirect'
+import React, {Fragment, useEffect} from 'react'
+import redirect from '../helpers/redirect'
 
-export default class extends Page {
-  componentDidMount() {
-    redirect({href: '/'})
-  }
+export default () => {
+  useEffect(() => {
+    const id = setTimeout(() => {
+      redirect({href: '/'})
+    }, 2000)
 
-  render() {
-    return null
-  }
+    return () => clearTimeout(id)
+  }, [])
+
+  return <p>Redirecting back to / in 2 seconds..</p>
 }
